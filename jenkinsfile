@@ -42,10 +42,10 @@ pipeline {
     post {
         always {
             steps {
-                script {
-                    // Stop and clean up the Docker environment
-                    // sh "docker-compose --env-file ${ENV_FILE_PATH} -f ${DOCKER_COMPOSE_FILE} down"
-                }
+                // script {
+                //     // Stop and clean up the Docker environment
+                //     // sh "docker-compose --env-file ${ENV_FILE_PATH} -f ${DOCKER_COMPOSE_FILE} down"
+                // }
                 // Archive logs or artifacts if they exist
                 archiveArtifacts artifacts: '**/logs/*', allowEmptyArchive: true
             }
