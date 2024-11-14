@@ -1,0 +1,34 @@
+version: '3'
+services:
+  user:
+    image: user
+    ports:
+      - "3001:8080"
+    command: node server.js
+    env_file:
+      - .env
+
+  cart:
+    image: cart
+    ports:
+      - "3003:8080"
+    command: node server.js  
+    env_file:
+      - .env
+
+  product:
+    image: product
+    ports:
+      - "3002:8080"
+    command: node server.js
+    env_file:
+      - .env
+  
+  frontend:
+    image: frontend
+    ports:
+      - "8080:8080"
+    command: npm run dev
+    env_file:
+      - .env
+    
