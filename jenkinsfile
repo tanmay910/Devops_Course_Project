@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         REPO_URL = 'https://github.com/tanmay910/Devops_Course_Project.git' // Add your repo URL
-        DOCKER_COMPOSE_FILE = 'docker-compose.yaml'
+        DOCKER_COMPOSE_FILE = 'docker-compose.yml'
         ENV_FILE_PATH = '/root/.env' // Absolute path to the .env file on the Jenkins server/VM
         AWS_PUBLIC_IP = '' // Replace with your actual AWS instance public IP
     }
