@@ -13,6 +13,14 @@ pipeline {
                 git url: "${REPO_URL}", branch: 'master'
             }
         }
+        stage('Copy .env file') {
+            steps{
+                script{
+                    sh "cp /var/lib/jenkins/.env /var/lib/jenkins/workspace/devops-project/
+"
+                }
+            }
+        }
         stage('Build Docker Images') {
             steps {
                 script {
