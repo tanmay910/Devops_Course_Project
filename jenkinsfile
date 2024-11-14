@@ -1,0 +1,54 @@
+pipeline {
+    agent any
+    environment {
+        REPO_URL = 'https://github.com/tanmay910/Devops_Course_Project.git' // Add your repo URL
+        DOCKER_COMPOSE_FILE = 'docker-compose.yaml'
+        ENV_FILE_PATH = '/root/.env' // Absolute path to the .env file on the Jenkins server/VM
+        AWS_PUBLIC_IP = '' // Replace with your actual AWS instance public IP
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout the code from GitHub using the provided credentials
+                git url: "${REPO_URL}", branch: 'master'
+            }
+        }
+        stage('Build Docker Images') {
+            steps {
+                script {
+                    // Build Docker images for the services using the existing .env file
+                    sh "docker-compose --env-file ${ENV_FILE_PATH} -f ${DOCKER_COMPOSE_FILE} build"
+                }
+            }
+        }
+        stage('Run Docker Compose') {
+            steps {
+                script {
+                    // Run Docker Compose with the existing .env file
+                    sh "docker-compose --env-file ${ENV_FILE_PATH} -f ${DOCKER_COMPOSE_FILE} up -d"
+                }
+            }
+        }
+
+        // stage('Curl Website') {
+        //     steps {
+        //         script {
+        //             // Curl the website using the AWS instance public IP
+        //             sh "curl http://${AWS_PUBLIC_IP}" // Ensure services are running on the correct port
+        //         }
+        //     }
+        // }
+    }
+    post {
+        always {
+            steps {
+                script {
+                    // Stop and clean up the Docker environment
+                    // sh "docker-compose --env-file ${ENV_FILE_PATH} -f ${DOCKER_COMPOSE_FILE} down"
+                }
+                // Archive logs or artifacts if they exist
+                archiveArtifacts artifacts: '**/logs/*', allowEmptyArchive: true
+            }
+        }
+    }
+}

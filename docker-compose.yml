@@ -1,7 +1,8 @@
 version: '3'
 services:
   user:
-    image: user
+    build:
+      context: ./User
     ports:
       - "3001:8080"
     command: node server.js
@@ -9,7 +10,8 @@ services:
       - .env
 
   cart:
-    image: cart
+    build:
+      context: ./Cart
     ports:
       - "3003:8080"
     command: node server.js  
@@ -17,7 +19,8 @@ services:
       - .env
 
   product:
-    image: product
+    build:
+      context: ./Product
     ports:
       - "3002:8080"
     command: node server.js
@@ -25,10 +28,15 @@ services:
       - .env
   
   frontend:
-    image: frontend
+    build:
+      context: ./front-end
     ports:
-      - "8080:8080"
+      - "3000:8080"
     command: npm run dev
     env_file:
       - .env
+    depends_on:
+      - user
+      - cart
+      - product
     
