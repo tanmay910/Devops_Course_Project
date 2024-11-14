@@ -13,11 +13,10 @@ pipeline {
                 git url: "${REPO_URL}", branch: 'master'
             }
         }
-        stage('Copy .env file') {
+        stage('copy .env file') {
             steps{
                 script{
-                    sh "cp /var/lib/jenkins/.env /var/lib/jenkins/workspace/devops-project/
-"
+                    sh "cp /var/lib/jenkins/.env /var/lib/jenkins/workspace/devops-project/.env"
                 }
             }
         }
