@@ -69,4 +69,13 @@ http://localhost:5173/
 - [Microservices Architecture]()
 
 ## Contributers 
+- [Anubhav Gupta](https://github.com/anubhav-0910)
+- [Ayush Jain](https://github.com/Ayushjain0)
+- [Rohit Chaudhari](https://github.com/Rohit-gits0)
+- [Chintan Chawda](https://github.com/imperialrogers)
+- [Imroz Khan](https://github.com/I-Zz)
+- [Shubham Kumar](https://github.com/shubhamiiitdwd)
+- [Tanmay Mahajan](https://github.com/tanmay910)
+- [Sanskar Suri](https://github.com/Sanskar50)
+- [Satyajeet Kumar](https://github.com/satya95760)
 
