@@ -1,19 +1,28 @@
 # E-Commerce Web Application using MERN Stack and Microservices Architecture
 
 ## Description
-This is a web application for an e-commerce store that sells games. It is built using the MERN stack and Microservices Architecture. It has a user interface for the customers to view the products and add them to their cart. The application is built using the Microservices Architecture, where each service is a separate Node.js application.
+This is a web application for an e-commerce store that sells games. It is built using the MERN stack and Microservices Architecture. The application consists of multiple microservices, each running as a separate Docker container. The microservices architecture includes services such as user authentication, product management, cart management, and order processing.
+
+## Project Structure
+The repo contains 4 microservices, each with its own folder, Dockerfile, and configuration. These services are:
+
+- **User Service** (Authentication & User Management)
+- **Product Service** (Product Catalog)
+- **Cart Service** (Cart Management)
+- **Order Service** (Order Management)
+
+There is also a **common `docker-compose.yml`** file to orchestrate and run all the microservices together.
 
 ## Installation
 
-Use the package manager [npm](https://www.npmjs.com/) to install dependencies.
-
+### 1. Clone the repository:
 ```bash
-npm install
+git clone https://github.com/your-repo/e-commerce-mern-microservices.git
+cd e-commerce-mern-microservices
 ```
 
-## Usage
-
-1. Create a .env file in the root directory and add the following environment variables (replace all #### with your own values):
+### 2. Setup environment variables:
+Create a `.env` file in the root directory and add the following environment variables (replace all #### with your own values):
 ```bash
 PORT=####
 MONGO_USERNAME=####
@@ -22,41 +31,40 @@ MONGO_CLUSTER=####
 MONGO_DBNAME=####
 ACCESS_TOKEN=####
 ```
-2. Run the following command to start the application:
-```bash
-npm run dev
-```
-3. Open the following URL in your browser:
-```bash
-http://localhost:<port_no>/
-```
 
-4. Or you can use docker-compose to run the application:
+### 3. Build and Run Containers using Docker Compose:
+To spin up all the services, simply run the following command:
 ```bash
-docker-compose up
+docker-compose up --build
 ```
-5. Show the running containers:
-```bash
-docker ps
-```
-6. Get the container ip address:
-```bash
-docker inspect <container_id> | grep "IPAddress"
-```
-7. Open the following URL in your browser:
-```bash
-http://<container_ip_address>:<port_no>/
-```
-8. To run the frontend application, run the following command:
+This will:
+- Build Docker images for each microservice.
+- Start all the containers as defined in the `docker-compose.yml` file.
+
+### 4. Accessing the Application:
+Once the containers are up and running, you can access the application:
+- **Backend Services:** The services will be running on their respective ports as specified in the `docker-compose.yml` file. For example, if the `PORT` for the frontend is set to `3000`, the service will be available at `http://localhost:3000/`.
+- **Frontend:** If you want to run the frontend separately, navigate to the `frontend` directory, install dependencies, and start the Vite development server:
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
-9. Open the following URL in your browser:
+The frontend will be available at `http://localhost:5173/`.
+
+### 5. Checking the Running Containers:
+To verify that all containers are running, use the following command:
 ```bash
-http://localhost:5173/
+docker ps
 ```
+You should see all your microservices containers running.
+
+### 6. Getting the Container IP Address:
+If you need to access a specific container by IP address (e.g., for debugging or networking), use:
+```bash
+docker inspect <container_id> | grep "IPAddress"
+```
+Then, you can access the services at `http://<container_ip>:<port>/`.
 
 
 ## Technologies
@@ -68,7 +76,7 @@ http://localhost:5173/
 - [Docker Compose](https://docs.docker.com/compose/)
 - [Microservices Architecture]()
 
-## Contributers 
+## Contributors 
 - [Anubhav Gupta](https://github.com/anubhav-0910)
 - [Ayush Jain](https://github.com/Ayushjain0)
 - [Rohit Chaudhari](https://github.com/Rohit-gits0)
