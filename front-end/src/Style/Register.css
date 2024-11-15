@@ -1,136 +1,157 @@
+/* Importing Google Fonts for Montserrat and Poppins */
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Poppins:400,500&display=swap');
 
+/* General Reset - Ensures no margin, padding, and box-sizing for all elements */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  user-select: none;
+  box-sizing: border-box; /* Ensures the padding and border are included in the element's total width/height */
+  user-select: none; /* Prevents text selection */
 }
 
+/* Background Image Styles for the first background */
 .bg-img {
-  background: url('src/assets/background1.jpg');
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
+  background: url('src/assets/background1.jpg'); /* Background image for the first container */
+  height: 100vh; /* Full height of the viewport */
+  background-size: cover; /* Ensures the image covers the whole container */
+  background-position: center; /* Centers the background image */
 }
+
+/* Background Image Styles for the second background */
 .bg-img2 {
-  background: url('src/assets/background2.jpg');
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
+  background: url('src/assets/background2.jpg'); /* Background image for the second container */
+  height: 100vh; /* Full height of the viewport */
+  background-size: cover; /* Ensures the image covers the whole container */
+  background-position: center; /* Centers the background image */
 }
+
+/* Dark overlay effect for the background image */
 .bg-img:after {
   position: absolute;
-  content: '';
+  content: ''; /* Empty content to create the overlay */
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  height: 100%; /* Overlay covers the full height */
+  width: 100%; /* Overlay covers the full width */
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark overlay */
 }
 
+/* Heading inside a row, typically used for section titles */
 .row h6 {
-  color: white;
-  margin-top: 15px;
-  font-family: 'Montserrat', sans-serif;
+  color: white; /* White text color */
+  margin-top: 15px; /* Margin at the top */
+  font-family: 'Montserrat', sans-serif; /* Font family for the heading */
   position: relative;
-  display: flex;
+  display: flex; /* Flexbox layout for alignment */
 }
 
+/* Custom padding for top of a container, used for spacing */
 .sptop {
-  padding-top: 300px;
+  padding-top: 300px; /* Adds top padding to create space */
 }
 
+/* Styling for the main registration content container */
 .registerContent {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 999;
-  text-align: center;
-  padding: 30px 32px;
-  width: 500px;
-  transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.04);
-  box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
+  position: absolute; /* Absolute positioning for centering */
+  top: 50%; /* Center the content vertically */
+  left: 50%; /* Center the content horizontally */
+  z-index: 999; /* Ensure it appears above other elements */
+  text-align: center; /* Center text horizontally */
+  padding: 30px 32px; /* Padding inside the container */
+  width: 500px; /* Set the width of the container */
+  transform: translate(-50%, -50%); /* Offsets the position by 50% of its own width/height to center it */
+  background: rgba(255, 255, 255, 0.04); /* Transparent white background with slight tint */
+  box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75); /* Adds shadow around the content box */
 }
 
+/* Field container for input fields */
 .field {
   position: relative;
-  border-radius: 15px;
-  height: 45px;
-  width: 100%;
-  display: flex;
-  background: rgba(255, 255, 255, 0.94);
+  border-radius: 15px; /* Rounded corners */
+  height: 45px; /* Set height for the field */
+  width: 100%; /* Field takes full width of parent */
+  display: flex; /* Flexbox for input alignment */
+  background: rgba(255, 255, 255, 0.94); /* Slightly transparent background */
 }
 
+/* Styling for the icon inside the input fields */
 .field span {
-  color: #222;
-  width: 50px;
-  margin-top: 5px;
-  line-height: 45px;
+  color: #222; /* Dark color for the icons */
+  width: 50px; /* Fixed width for the icon */
+  margin-top: 5px; /* Vertical alignment for the icon */
+  line-height: 45px; /* Vertically center the icon */
 }
 
+/* Styling for the input field itself */
 .field input {
-  height: 100%;
-  width: 100%;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: #222;
-  font-size: 16px;
-  font-family: 'Poppins', sans-serif;
+  height: 100%; /* Full height of the parent */
+  width: 100%; /* Full width of the parent */
+  background: transparent; /* Transparent background */
+  border: none; /* No border */
+  outline: none; /* Remove default outline */
+  color: #222; /* Dark text color */
+  font-size: 16px; /* Font size for the input text */
+  font-family: 'Poppins', sans-serif; /* Font family */
 }
 
+/* Space between fields or other elements */
 .space {
-  margin-top: 16px;
+  margin-top: 16px; /* Adds space between elements */
 }
 
+/* Styling for the header text inside the registration form */
 .registerContent header {
-  color: white;
-  font-size: 33px;
-  font-weight: 600;
-  margin: 0 0 35px 0;
-  font-family: 'Montserrat', sans-serif;
+  color: white; /* White text color */
+  font-size: 33px; /* Font size for the header */
+  font-weight: 600; /* Semi-bold font weight */
+  margin: 0 0 35px 0; /* Margin below the header */
+  font-family: 'Montserrat', sans-serif; /* Font family */
 }
 
+/* Styling for the submit button inside the registration form */
 .field input[type="submit"] {
-  background: -webkit-linear-gradient(left, #a445b2, #fa4299);
-  border: 0px;
-  color: white;
-  font-size: 18px;
-  letter-spacing: 1px;
-  font-weight: 600;
-  cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
+  background: -webkit-linear-gradient(left, #a445b2, #fa4299); /* Gradient background */
+  border: 0px; /* No border */
+  color: white; /* White text color */
+  font-size: 18px; /* Font size */
+  letter-spacing: 1px; /* Letter spacing */
+  font-weight: 600; /* Semi-bold font weight */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-family: 'Montserrat', sans-serif; /* Font family */
 }
 
+/* Hover effect for the submit button */
 .field input[type="submit"]:hover {
-  background: -webkit-linear-gradient(right, #a445b2, #fa4299);
+  background: -webkit-linear-gradient(right, #a445b2, #fa4299); /* Gradient changes direction on hover */
 }
 
+/* Styling for the sign-up text below the registration form */
 .signup {
-  font-size: 15px;
-  color: white;
-  font-family: 'Poppins', sans-serif;
+  font-size: 15px; /* Smaller font size */
+  color: white; /* White text color */
+  font-family: 'Poppins', sans-serif; /* Font family */
 }
 
+/* Styling for the sign-up link */
 .signup a {
-  color: #a445b2;
-  margin-left: 5px;
-  text-decoration: none;
+  color: #a445b2; /* Link color */
+  margin-left: 5px; /* Adds left margin to separate from text */
+  text-decoration: none; /* Removes underline */
 }
 
+/* Hover effect for the sign-up link */
 .signup a:hover {
-  color: #fa4299;
-  text-decoration: underline;
+  color: #fa4299; /* Changes link color on hover */
+  text-decoration: underline; /* Underlines the link on hover */
 }
 
+/* Styling for the inline text (e.g., buttons or other elements) */
 .inline {
-  color: white;
+  color: white; /* White text color */
   position: relative;
-  display: flex;
-  padding-top: 10px;
-  cursor: pointer;
-  font-weight: 500;
-  overflow: hidden;
+  display: flex; /* Flexbox layout */
+  padding-top: 10px; /* Padding at the top */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-weight: 500; /* Medium font weight */
+  overflow: hidden; /* Prevents content overflow */
 }

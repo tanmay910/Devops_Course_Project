@@ -1,139 +1,159 @@
+/* Importing Google Fonts for Montserrat and Poppins */
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Poppins:400,500&display=swap');
 
+/* General Reset - Ensuring no margin, padding, and box-sizing for all elements */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  user-select: none;
+  box-sizing: border-box; /* Ensures the padding and border are included in the element's total width/height */
+  user-select: none; /* Prevents text selection */
 }
 
+/* Background Image Styles */
 .bg-img {
-  background: url('src/assets/background2.jpg');
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
+  background: url('src/assets/background2.jpg'); /* Background image for the full viewport */
+  height: 100vh; /* Full height of the viewport */
+  background-size: cover; /* Ensures the image covers the whole container */
+  background-position: center; /* Centers the background image */
 }
 
+/* Overlay dark layer on the background image */
 .bg-img:after {
   position: relative;
-  content: '';
+  content: ''; /* Empty content to create the overlay */
   top: 0;
   left: 0;
-  height: 90%;
+  height: 90%; /* Overlay covers most of the background */
   width: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark overlay */
 }
 
+/* Styling for the field header text */
 .fieldHeader {
-  color: aliceblue;
+  color: aliceblue; /* Light text color */
   position: relative;
-  display: flex;
+  display: flex; /* Flexbox for layout purposes */
 }
 
+/* Content container positioning and styling */
 .content {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 999;
-  text-align: center;
-  padding: 60px 32px;
-  width: 420px;
-  transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.04);
-  box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
+  top: 50%; /* Center the content vertically */
+  left: 50%; /* Center the content horizontally */
+  z-index: 999; /* Ensure it appears above other elements */
+  text-align: center; /* Center the text */
+  padding: 60px 32px; /* Space inside the container */
+  width: 420px; /* Set the width of the content */
+  transform: translate(-50%, -50%); /* Offset the position by 50% of its own width/height to center it */
+  background: rgba(255, 255, 255, 0.04); /* Transparent background with slight white tint */
+  box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75); /* Shadow around the content box */
 }
 
+/* Header inside the content box */
 .content header {
-  color: white;
-  font-size: 33px;
-  font-weight: 600;
-  margin: 0 0 35px 0;
-  font-family: 'Montserrat', sans-serif;
+  color: white; /* Text color */
+  font-size: 33px; /* Font size for the header */
+  font-weight: 600; /* Semi-bold font weight */
+  margin: 0 0 35px 0; /* Margin below the header */
+  font-family: 'Montserrat', sans-serif; /* Font family */
 }
 
+/* Styling for the form fields (input elements) */
 .field {
   position: relative;
-  height: 45px;
-  width: 100%;
-  border-radius: 15px;
-  display: flex;
-  background: rgba(255, 255, 255, 0.94);
+  height: 45px; /* Field height */
+  width: 100%; /* Field takes full width */
+  border-radius: 15px; /* Rounded corners */
+  display: flex; /* Flexbox for input and icon alignment */
+  background: rgba(255, 255, 255, 0.94); /* Slightly transparent background */
 }
 
+/* Icon styling inside the input fields */
 .field span {
-  color: #222;
-  width: 50px;
-  margin-top: 5px;
-  line-height: 45px;
+  color: #222; /* Dark color for the icons */
+  width: 50px; /* Fixed width for the icon */
+  margin-top: 5px; /* Vertical alignment of the icon */
+  line-height: 45px; /* Vertically centering the icon */
 }
 
+/* Person icon for username field */
 .person {
-  background: url('../assets/person.png');
+  background: url('../assets/person.png'); /* Path to person icon */
 }
 
+/* Password icon for password field */
 .password {
-  background: url('../assets/password.png');
+  background: url('../assets/password.png'); /* Path to password icon */
 }
 
+/* Input field styling */
 .field input {
-  height: 100%;
-  width: 100%;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: #222;
-  font-size: 16px;
-  font-family: 'Poppins', sans-serif;
+  height: 100%; /* Full height of the parent */
+  width: 100%; /* Full width of the parent */
+  background: transparent; /* Transparent background for the input */
+  border: none; /* Removes default border */
+  outline: none; /* Removes default focus outline */
+  color: #222; /* Dark text color */
+  font-size: 16px; /* Font size for the input */
+  font-family: 'Poppins', sans-serif; /* Font family */
 }
 
+/* Space between fields or other elements */
 .space {
-  margin-top: 16px;
+  margin-top: 16px; /* Space between elements */
 }
 
+/* Show password toggle text */
 .show {
   position: absolute;
-  right: 13px;
-  font-size: 13px;
-  font-weight: 700;
-  color: #222;
-  display: none;
-  cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
+  right: 13px; /* Position on the right of the input */
+  font-size: 13px; /* Smaller font size */
+  font-weight: 700; /* Bold weight */
+  color: #222; /* Dark color for the text */
+  display: none; /* Initially hidden */
+  cursor: pointer; /* Cursor pointer on hover */
+  font-family: 'Montserrat', sans-serif; /* Font family */
 }
 
+/* Submit button styling */
 .field input[type="submit"] {
-  background: -webkit-linear-gradient(left, #a445b2, #fa4299);
-  border: 0px;
-  color: white;
-  font-size: 18px;
-  letter-spacing: 1px;
-  font-weight: 600;
-  cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
+  background: -webkit-linear-gradient(left, #a445b2, #fa4299); /* Gradient background */
+  border: 0px; /* No border */
+  color: white; /* White text color */
+  font-size: 18px; /* Font size */
+  letter-spacing: 1px; /* Spacing between letters */
+  font-weight: 600; /* Semi-bold weight */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-family: 'Montserrat', sans-serif; /* Font family */
 }
 
+/* Hover effect for the submit button */
 .field input[type="submit"]:hover {
-  background: -webkit-linear-gradient(right, #a445b2, #fa4299);
+  background: -webkit-linear-gradient(right, #a445b2, #fa4299); /* Gradient changes direction on hover */
 }
 
+/* Login text style */
 .login {
-  color: white;
-  margin: 20px 0;
-  font-family: 'Poppins', sans-serif;
+  color: white; /* White text */
+  margin: 20px 0; /* Vertical margin */
+  font-family: 'Poppins', sans-serif; /* Font family */
 }
 
+/* Sign-up text style */
 .signup {
-  font-size: 15px;
-  color: white;
-  font-family: 'Poppins', sans-serif;
+  font-size: 15px; /* Smaller font size */
+  color: white; /* White text */
+  font-family: 'Poppins', sans-serif; /* Font family */
 }
 
+/* Link style for the sign-up text */
 .signup a {
-  color: #a445b2;
-  text-decoration: none;
+  color: #a445b2; /* Link color */
+  text-decoration: none; /* Remove underline */
 }
 
+/* Hover effect for the sign-up link */
 .signup a:hover {
-  color: #fa4299;
-  text-decoration: underline;
+  color: #fa4299; /* Change color on hover */
+  text-decoration: underline; /* Underline the link on hover */
 }
