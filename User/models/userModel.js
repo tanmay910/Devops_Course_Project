@@ -1,5 +1,5 @@
-const mongoose = require("mongoose"); 
 // Importing the mongoose library to interact with a MongoDB database.
+const mongoose = require("mongoose"); 
 
 // Defining the schema for the "User" model
 const userSchema = mongoose.Schema(
