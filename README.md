@@ -70,9 +70,4 @@ http://localhost:5173/
 - [Microservices Architecture]()
 
 ## Contributers 
-- [Thomas Maged](https://github.com/Thomas-Maged)
-- [Maximous Atef](https://github.com/Maxiatef)
-- [Kirollos Nessim](https://github.com/KirollosNessem)
-- [Ramez Hesham](https://github.com/RamezHesham)
-- [Yara Wael](https://github.com/yara880)
-- [Nourhane Amir](https://github.com/NourhaneAmir)
+
