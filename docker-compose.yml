@@ -3,6 +3,7 @@ services:
   user:
     build:
       context: ./User
+    image: tanmay910/user
     ports:
       - "3001:8080"
     command: node server.js
@@ -12,6 +13,7 @@ services:
   cart:
     build:
       context: ./Cart
+    image: tanmay910/cart
     ports:
       - "3003:8080"
     command: node server.js  
@@ -21,6 +23,7 @@ services:
   product:
     build:
       context: ./Product
+    image: tanmay910/product
     ports:
       - "3002:8080"
     command: node server.js
@@ -30,6 +33,7 @@ services:
   frontend:
     build:
       context: ./front-end
+    image: tanmay910/frontend
     ports:
       - "3000:8080"
     command: npm run dev
@@ -39,4 +43,3 @@ services:
       - user
       - cart
       - product
-    
