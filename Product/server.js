@@ -5,6 +5,8 @@ const app = express();
 
 require('dotenv').config();
 require('./config/db_conn');
+
+// Specify port here, Default port is 9000
 const port = process.env.PORT || 9000;
 
 app.use(cors());

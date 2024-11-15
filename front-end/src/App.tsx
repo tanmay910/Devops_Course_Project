@@ -12,6 +12,7 @@ function App() {
   return (
     <Fragment>
       <NavBar />
+// Routing is done here
       <Router>
         <Routes>
           <Route index path="/" element={<Home />} />
