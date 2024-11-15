@@ -1,24 +1,23 @@
-const express = require("express"); 
 // Importing the Express library to create a router for handling user-related routes.
+const express = require("express"); 
 
-const router = express.Router(); 
 // Creating an instance of the Express Router to define routes for user operations.
+const router = express.Router(); 
 
-const validateToken = require("../middleware/tokenValidationMiddleware"); 
 // Importing a custom middleware function for token validation to secure specific routes.
-
-const {
-    getUser, 
-    // Controller function to retrieve a specific user's details.
-    getUsers, 
-    // Controller function to retrieve a list of all users.
-    userRegister, 
-    // Controller function to handle user registration.
-    loginUser
-    // Controller function to handle user login.
-} = require("../controllers/usercontroller");
+const validateToken = require("../middleware/tokenValidationMiddleware"); 
 
 // Define routes for user-related operations
+const {
+    // Controller function to retrieve a specific user's details.
+    getUser, 
+    // Controller function to retrieve a list of all users.
+    getUsers, 
+    // Controller function to handle user registration.
+    userRegister, 
+    // Controller function to handle user login.
+    loginUser
+} = require("../controllers/usercontroller");
 
 // Route to register a new user
 router.route("/").post(userRegister);
@@ -48,5 +47,5 @@ router.route("/login").post(loginUser);
 // - Functionality: Authenticates a user and generates a token by calling the `loginUser` controller function.
 // - No authentication required to access this route.
 
-module.exports = router; 
 // Exporting the router to make these routes available to the main application.
+module.exports = router; 
